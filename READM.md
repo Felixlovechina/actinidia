@@ -7,7 +7,7 @@
 所有测试能力服务化后，通过http协议作为基础，书写所有的业务用例。<br />用例内容采用json作为输入输出。<br />用例结果采用json结构diff+过滤的方式进行断言。<br />在这个情境下，用例管理需要一个方便的交互执行界面，此工具应运而生。<br />另外降低研发同学执行复现的成本。
 <a name="B5O06"></a>
 ## 2、为什么使用idea插件的形式
-（1）idea是一个普遍使用的ide工具平台。<br />（2）集团的代码检查插件等，在idea上有了极佳的实践<br />（3）idea插件市场有很高的下载量，方便更广泛的推广。如，之前发布的一个非常简单的小工具就达到了2w+的下载量，足见其传播力还是很惊人的。<br />![](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/8773/1589130243679-7eb3357b-0407-47a3-8734-cfc29454952d.png?x-oss-process=image%2Fresize%2Cw_1492#align=left&display=inline&height=790&margin=%5Bobject%20Object%5D&originHeight=790&originWidth=1492&status=done&style=none&width=1492)<br /> 
+（1）idea是一个普遍使用的ide工具平台。<br />（2）集团的代码检查插件等，在idea上有了极佳的实践<br />（3）idea插件市场有很高的下载量，方便更广泛的推广。如，之前发布的一个非常简单的小工具就达到了2w+的下载量，足见其传播力还是很惊人的。<br />![]
 <a name="lG3Lk"></a>
 # 二、插件安装
 <a name="XwYXW"></a>
@@ -59,8 +59,8 @@ json格式，说明当前http请求的相关信息，包括：
 ```
 <a name="J2MtG"></a>
 ### （3）变量引用
-场景：<br />-场景1，调用“A命令文件”返回json中有x变量，希望在调用“B命令文件”的时候使用到；<br />-场景2，A/B/C/D/E/F命令文件希望共用一个变量，希望统一提出来配置到一个地方；<br />方法：<br />-在“xxxJSON格式的文件”中设置一个变量<br />-在需要引用的文件中配置：“@文件名jsonpath@”<br />如：<br />@0000-caseId.json$.case_id@<br />其中，“0000-caseId.json”为文件名（目前仅支持当前目录下），“$.case_id”为要引用的变量的jsonpath。<br />可以配置在命令文件的任务位置，包括在字符串中间。程序处理的时候，通过正则进行匹配替换。<br />![](https://cdn.nlark.com/lark/0/2020/png/13080/1579591710954-5099c1b7-1798-4e3f-8ff6-6f229aadf92e.png#align=left&display=inline&height=1206&margin=%5Bobject%20Object%5D&originHeight=1206&originWidth=2962&status=done&style=none&width=2962)
-<a name="SNXrP"></a>
+场景：<br />-场景1，调用“A命令文件”返回json中有x变量，希望在调用“B命令文件”的时候使用到；<br />-场景2，A/B/C/D/E/F命令文件希望共用一个变量，希望统一提出来配置到一个地方；<br />方法：<br />-在“xxxJSON格式的文件”中设置一个变量<br />-在需要引用的文件中配置：“@文件名jsonpath@”<br />如：<br />@0000-caseId.json$.case_id@<br />其中，“0000-caseId.json”为文件名（目前仅支持当前目录下），“$.case_id”为要引用的变量的jsonpath。<br />可以配置在命令文件的任务位置，包括在字符串中间。程序处理的时候，通过正则进行匹配替换。
+
 ## 2、结果文件
 每个命令文件在执行后生成同名的".new.json/.old.json/.diff.json"文件；
 
